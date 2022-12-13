@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Jobs;
+
+use App\Mail\ReserveVisitEmail;
+use App\Models\Category;
+use App\Models\Term;
+use App\Models\User;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+
+class ActivitesNewTerms implements ShouldQueue
+{
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+    public Term $term;
+    /**
+     * Create a new job instance.
+     *
+     * @return void
+     */
+    public function __construct(Term $term)
+    {
+        $this->term = $term;
+    }
+
+    /**
+     * Execute the job.
+     *
+     * @return void
+     */
+    public function handle()
+    {
+
+        $this->term->is_active = true;
+        $this->term->save();
+    }
+}

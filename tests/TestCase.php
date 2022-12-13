@@ -1,25 +1,35 @@
 <?php
 
-abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
+namespace Tests;
+
+use App\Models\Doctor;
+use App\Models\Term;
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+
+abstract class TestCase extends BaseTestCase
 {
-    /**
-     * The base URL to use while testing the application.
-     *
-     * @var string
-     */
-    protected $baseUrl = 'http://localhost';
+    use CreatesApplication, RefreshDatabase;
 
-    /**
-     * Creates the application.
-     *
-     * @return \Illuminate\Foundation\Application
-     */
-    public function createApplication()
+
+
+    protected function admin()
     {
-        $app = require __DIR__.'/../bootstrap/app.php';
-
-        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
-
-        return $app;
+        return User::factory()->suspended()->create([
+            'email' => fake()->email()
+        ]);
+    }
+    protected function worker()
+    {
+        return User::factory()->worker()->create([
+            'email' => fake()->email()
+        ]);
+    }
+    protected function user()
+    {
+        return User::factory()->user()->create([
+            'email' => fake()->email()
+        ]);
     }
 }

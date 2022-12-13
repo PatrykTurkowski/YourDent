@@ -1,16 +1,92 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\User\UserController;
+use App\Http\Controllers\User\Home\HomeController;
+use App\Http\Controllers\Admin\Service\ServiceController;
+use App\Http\Controllers\Admin\Term\TermController;
+use App\Http\Controllers\Admin\Doctor\DoctorController;
+use App\Http\Controllers\Admin\Panel\PanelController;
+use App\Http\Controllers\User\Visit\VisitController;
+use App\Http\Controllers\Admin\Term\TermsGeneratorController;
+use App\Http\Controllers\Mail\ContactController;
+use App\Http\Controllers\User\Locales\LocalesController;
+use App\Http\Controllers\User\Management\HistoryController;
+use App\Http\Controllers\User\Management\ReservationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main.index');
+})->name('welcome');
+Route::get('/test', function () {
+    return view('auth2.login');
 });
+
+Route::post('/send', [ContactController::class, 'send'])->name('send.email');
+
+Auth::routes([
+    'verify' => true
+]);
+
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+
+
+// ------users-----------
+
+
+Route::resource('users', UserController::class);
+
+// ------categories-----------
+
+
+Route::get('categories/{category}/restore', [CategoryController::class, 'restore'])->name('categories.restore');
+Route::resource('categories', CategoryController::class);
+
+
+// ------services-----------
+
+Route::get('services/{service}/restore', [ServiceController::class, 'restore'])->name('services.restore');
+Route::resource('services', ServiceController::class);
+
+// ------doctors-----------
+
+Route::resource('doctors', DoctorController::class);
+
+// ------Terms-----------
+
+Route::resource('terms', TermController::class);
+
+// ------termsgenerator-----------
+
+Route::resource('termsGenerators', TermsGeneratorController::class)->only(['create', 'store']);
+
+// ------Visit-----------
+
+Route::resource('visits', VisitController::class)->only(['index', 'update']);
+
+// ======history===========
+
+Route::resource('histories', HistoryController::class)->only(['index', 'show']);
+
+// ======reservation===========
+
+Route::resource('reservations', ReservationController::class)->only(['index', 'show', 'update']);
+
+// ======AdminPanel===========
+
+Route::resource('panels', PanelController::class)->only(['index']);
+
+// ======locales===========
+
+Route::get('/locales', [LocalesController::class, 'locales'])->name('locales');
