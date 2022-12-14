@@ -13,6 +13,7 @@ use App\Observers\ServiceObserver;
 use App\Observers\TermObserver;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,6 +35,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
 
         // Blade Components
         Blade::aliasComponent('components.create_btn', 'create_btn');
