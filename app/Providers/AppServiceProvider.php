@@ -6,7 +6,6 @@ use App\Models\Category;
 use App\Models\Doctor;
 use App\Models\Service;
 use App\Models\Term;
-use App\Models\TermsGenerator;
 use App\Observers\CategoryObserver;
 use App\Observers\DoctorObserver;
 use App\Observers\ServiceObserver;
