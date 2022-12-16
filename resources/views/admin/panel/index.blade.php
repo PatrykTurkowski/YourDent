@@ -1,23 +1,20 @@
-@extends('layouts.admin')
+@extends('admin.layouts.admin-panel')
 
 @section('content')
-    @header
-        Panel Admin
-    @endheader
-    <main class="container text-center d-flex justify-content-around">
-        <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Liczba użytkowników</li>
-                <li class="list-group-item">{{ $users }}</li>
+    <span class="d-lg-none">
+        @include('admin.panel.includes._nav')
+    </span>
 
-            </ul>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Liczba zajętych terminów</li>
-                <li class="list-group-item">{{ $terms }}</li>
-            </ul>
-        </div>
+    <main class="main d-lg-none" id="main">
+        @include('admin.panel.includes._main-mobile')
     </main>
 
+    <div class="container-fluid d-none d-lg-block">
+        <div class="row">
+            @include('admin.panel.includes._left-side')
+            <main class="main col-lg-10" id="main">
+                @include('admin.panel.includes._right-side')
+            </main>
+        </div>
+    </div>
 @endsection

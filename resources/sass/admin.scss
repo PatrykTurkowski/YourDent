@@ -1,0 +1,78 @@
+@use 'colors' as *;
+@use 'font' as *;
+
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+    height: 100vh;
+	// scroll-behavior: smooth;
+}
+
+body {
+	font-size: 1.6rem;
+	background-color: $darker-white-color;
+	font-family: $main-font;
+    height: 100vh;
+}
+.left-bar
+{
+    height: 100vh;
+	background-color: $bg-white;
+}
+
+.nav__btn {
+	text-decoration: none;
+	color: black;
+	border-bottom: 1px solid #000;
+	transition: color 0.3s,border-color 0.3s;
+	
+}
+.nav__btn:hover {
+	text-decoration: none;
+	color: $secondary-orange;
+	border-bottom: 1px solid $secondary-orange;
+	transition: color 0.3s,border-color 0.3s;
+}
+.nav__btn--title {
+	text-decoration: none;
+	color: black;
+	transition: color 0.3s;
+	
+}
+.nav__btn--title:hover {
+	text-decoration: none;
+	color: $secondary-orange;
+	transition: color 0.3s;
+}
+.nav__btn--logout {
+	
+	text-decoration: none;
+	color: black;
+	transition: color 0.3s;
+	
+}
+.nav__btn--logout:hover {
+	text-decoration: none;
+	color: $secondary-orange;
+	transition: color 0.3s;
+}
+.sortable a{
+	text-decoration: none;
+	color: black;
+	transition: color 0.3s;
+}
+.sortable a:hover{
+	text-decoration: none;
+	color: $secondary-orange;
+	transition: color 0.3s;
+}
