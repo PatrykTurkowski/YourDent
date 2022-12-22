@@ -29,20 +29,20 @@ We wanted to present a fully functioning website.
 
 -   responsive website (in progress).
 -   From Laravel
-    -- The blade template system.
-    -- Model Eloquent.
-    -- Polices
-    -- Observers
-    -- Custom Rules
-    -- Custom Request
-    -- Custom Jobs
-    -- Custom Middleware
-    -- Scopes
-    -- Facotory
-    -- Seeders
-    -- Migrations
-    -- Feature Tests (in progress)
-    -- and a lot more...
+    > -   The blade template system.
+    > -   Model Eloquent.
+    > -   Polices
+    > -   Observers
+    > -   Custom Rules
+    > -   Custom Request
+    > -   Custom Jobs
+    > -   Custom Middleware
+    > -   Scopes
+    > -   Facotory
+    > -   Seeders
+    > -   Migrations
+    > -   Feature Tests (in progress)
+    > -   and a lot more...
 
 ## In the near future...
 
@@ -51,14 +51,14 @@ We wanted to present a fully functioning website.
 > now I will present the elements that need work/improvement:
 
 -   Add Page:
-    -- Offer
-    -- FAQ
-    -- Team
-    -- Contact
+    > -   Offer
+    > -   FAQ
+    > -   Team
+    > -   Contact
 -   Improving the appearance of:
-    -- Panel Admin
-    -- Reservation Page
-    -- History Page
+    > -   Panel Admin
+    > -   Reservation Page
+    > -   History Page
 -   Add a lot of feature tests
 
 ## Tech:
