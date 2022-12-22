@@ -4,8 +4,16 @@
 
 ### About Project
 
-The project was created as a sample of our skills.
-We wanted to present a fully functioning website.
+In this project, I worked on the backend, or the part of the project that handles the behind-the-scenes processes, while my partner focused on the frontend, or the visible part of the project. The project is not yet fully completed, but the backend has all the necessary functionality. You can create your own account or use one of the provided accounts to access the application. The provided accounts are for an admin, employee, and user, with the respective email addresses and passwords given. Please do not change the passwords or make major changes as an admin, as it may cause the database to need to be reset.
+For admin:
+email: admin@example.pl
+password: Secret11
+For worker:
+email: worker@example.pl
+password: Secret11
+For user:
+email: user@example.pl
+password: Secret11
 
 #### You can find:
 
