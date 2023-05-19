@@ -1,3 +1,3 @@
 @foreach ($items as $item)
-    <td class="{{ $trash ?? '' }}">{{ $item }}</td>
+    <td class="{{ $trash ?? '' }} ">{{ $item }}</td>
 @endforeach

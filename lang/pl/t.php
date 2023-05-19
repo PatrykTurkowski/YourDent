@@ -38,6 +38,7 @@ return [
     'saturday' => 'Sobota',
     'sunday' => 'Niedziela',
     'closed' => 'Zamknięte',
+    'call_to_us' => 'Zadzwoń do nas',
 
 
 

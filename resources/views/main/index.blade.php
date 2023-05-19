@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('links')
     @include('includes._links')
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/script.js'])
 @endsection
 @section('content')
     @include('includes._nav')

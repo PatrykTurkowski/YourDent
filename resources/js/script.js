@@ -10,15 +10,18 @@ const navLanguagePolish = document.querySelector(`.nav__language--pl`);
 const navLanguageEnglish = document.querySelector(`.nav__language--eng`);
 const navLanguageContainer = document.querySelector(`.nav__language-btn-container`);
 
+
+
+// NAWIGACJA
 const handleNav = () => {
 	navMobile.forEach((link) => {
 		link.classList.toggle(`nav__active`);
 	});
-    removeLanguageBox()
+	removeLanguageBox()
 };
 
 const removeLanguageBox = () => {
-    navLanguageOption.forEach((language) => {
+	navLanguageOption.forEach((language) => {
 		language.classList.remove(`nav__language-btn-active`);
 	});
 
@@ -37,35 +40,44 @@ const changeLanguage = (e) => {
 	const chosenLanguage = e.target.innerText;
 	navLanguageBtn.textContent = chosenLanguage;
 
-    removeLanguageBox()
+	removeLanguageBox()
 };
 
-const changeImg = () => {
-	if (window.innerWidth >= 992) {
-		offerCardOne.setAttribute(`src`, `./dist/img/dentist-offer-one_1920.jpg`);
-		offerCardTwo.setAttribute(`src`, `./dist/img/dentist-offer-two_1920.jpg`);
-		offerCardThree.setAttribute(
-			`src`,
-			`./dist/img/dentist-offer-three_1920.jpg`
-		);
-	} else {
-		offerCardOne.setAttribute(`src`, `./dist/img/dentist-offer-one_640.jpg`);
-		offerCardTwo.setAttribute(`src`, `./dist/img/dentist-offer-two_640.jpg`);
-		offerCardThree.setAttribute(
-			`src`,
-			`./dist/img/dentist-offer-three_640.jpg`
-		);
-	}
 
-	if (window.innerWidth >= 850) {
-		aboutUsImg.setAttribute(`src`, `./dist/img/doctor_1920.jpg`);
-	} else {
-		aboutUsImg.setAttribute(`src`, `./dist/img/doctor_640.jpg`);
-	}
-};
+
+
+
+// ZMIANA OBRAZU MAIN PAGE
+// const changeImg = () => {
+// 	if (window.innerWidth >= 992) {
+// 		offerCardOne.setAttribute(`src`, first_img);
+// 		offerCardTwo.setAttribute(`src`, `./dist/img/dentist-offer-two_1920.jpg`);
+// 		offerCardThree.setAttribute(
+// 			`src`,
+// 			`./dist/img/dentist-offer-three_1920.jpg`
+// 		);
+// 	} else {
+// 		offerCardOne.setAttribute(`src`, first_img);
+// 		offerCardTwo.setAttribute(`src`, `./dist/img/dentist-offer-two_640.jpg`);
+// 		offerCardThree.setAttribute(
+// 			`src`,
+// 			`./dist/img/dentist-offer-three_640.jpg`
+// 		);
+// 	}
+
+// 	if (window.innerWidth >= 850) {
+// 		aboutUsImg.setAttribute(`src`, `./dist/img/doctor_1920.jpg`);
+// 	} else {
+// 		aboutUsImg.setAttribute(`src`, `./dist/img/doctor_640.jpg`);
+// 	}
+// };
+
+
+
 
 navMobileBtn.addEventListener(`click`, handleNav);
 navLanguageBtn.addEventListener(`click`, handleLanguageNav);
 navLanguageContainer.addEventListener(`click`, changeLanguage);
-window.addEventListener(`resize`, changeImg);
+// window.addEventListener(`resize`, changeImg);
 window.addEventListener(`DOMContentLoaded`, changeImg)
+

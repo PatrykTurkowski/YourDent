@@ -38,7 +38,7 @@ class UpdateUserRequest extends FormRequest
             'apartment_number' => ['nullable', 'string', 'max:20'],
             'postcode' => ['required', 'string', 'max:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $this->route('user')->id],
-            'newsletter' => ['boolean'],
+
             'role' => [new Enum(UserRole::class)],
         ];
     }

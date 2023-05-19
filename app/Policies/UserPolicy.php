@@ -28,9 +28,9 @@ class UserPolicy
      * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, User $model)
+    public function view(User $user)
     {
-        return $user->id == $model->id;
+        return ($user->id == Auth::user()->id);
     }
 
     /**
@@ -53,7 +53,7 @@ class UserPolicy
      */
     public function update(User $user)
     {
-        return ($user->id == Auth::user()->id);
+        return $user->role <= 2;
     }
 
     /**

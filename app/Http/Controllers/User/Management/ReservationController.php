@@ -63,6 +63,9 @@ class ReservationController extends Controller
      */
     public function update(Term $reservation): RedirectResponse
     {
+        if ($reservation->is_done) {
+            abort('403', 'method not allowed');
+        }
         $user = User::find(auth()->user()->id);
         $reservation->update([
             'user_id' => null

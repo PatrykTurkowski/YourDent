@@ -6,17 +6,18 @@
                 <img class="offer__card-img offer__card-img--one"
                     src="{{ asset('storage/art/dentist-offer-one_640.jpg') }}" alt="Szczoteczka do zębów z pastą"></img>
                 <div class="offer__card-text-box">
-                    <h2 class="offer__card-title">Diagnostyka</h2>
+                    <h2 class="offer__card-title">{{ __('offer.diagnostics') }}</h2>
                     <p class="offer__card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat,
                         repellat?</p>
                     <ul class="offer__card-list">
-                        <li class="offer__card-list-element"><span class="offer__card-element">RTG</span></li>
-                        <li class="offer__card-list-element"><span class="offer__card-element">Mikrotomografia
-                                komputerowa</span></li>
-                        <li class="offer__card-list-element"><span class="offer__card-element">Tomografia
-                                komputerowa</span></li>
-                        <li class="offer__card-list-element"><span class="offer__card-element">Konsultacja
-                                lekarska</span></li>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.x-ray') }}</span></li>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.computer_microtomography') }}</span></li>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.computer_tomography') }}</span></li>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.medical_consultation') }}</span></li>
                     </ul>
                 </div>
             </div>
@@ -25,16 +26,20 @@
                     src="{{ asset('storage/art/dentist-offer-two_640.jpg') }}"
                     alt="Przyrządy leczenia dentystycznego"></img>
                 <div class="offer__card-text-box">
-                    <h2 class="offer__card-title">Pedodoncja</h2>
+                    <h2 class="offer__card-title">{{ __('offer.pedodontics') }}</h2>
                     <p class="offer__card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat,
                         repellat?</p>
                     <ul class="offer__card-list">
-                        <li class="offer__card-list-element"><span class="offer__card-element">Lakowanie</span></li>
-                        <li class="offer__card-list-element"><span class="offer__card-element">Fluoryzacja</span>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.lapis') }}</span></li>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.fluoridation') }}</span>
                         </li>
-                        <li class="offer__card-list-element"><span class="offer__card-element">Światłoutwardzalne
-                                wypełnienie kompozytowe</span></li>
-                        <li class="offer__card-list-element"><span class="offer__card-element">Lapisowanie</span>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.light-curing_composite_filling') }}</span>
+                        </li>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.varnishing') }}</span>
                         </li>
                     </ul>
                 </div>
@@ -44,39 +49,40 @@
                     src="{{ asset('storage/art/dentist-offer-three_640.jpg') }}"
                     alt="Artystyczne przedstawienie procesu naprawy zęba"></img>
                 <div class="offer__card-text-box">
-                    <h2 class="offer__card-title">Protetyka</h2>
+                    <h2 class="offer__card-title">{{ __('offer.prosthetics') }}</h2>
                     <p class="offer__card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat,
                         repellat?</p>
                     <ul class="offer__card-list">
-                        <li class="offer__card-list-element"><span class="offer__card-element">Korona
-                                protetyczna</span> </li>
-                        <li class="offer__card-list-element"><span class="offer__card-element">Proteza
-                                szkieletowa</span></li>
-                        <li class="offer__card-list-element"><span class="offer__card-element">Proteza
-                                akrylowa</span></li>
-                        <li class="offer__card-list-element"><span class="offer__card-element">Odbudowa zęba wkładem
-                                koronowo-korzeniowym</span></li>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.prosthetic_crown') }}</span> </li>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.skeletal_prosthesis') }}</span></li>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.acrylic_prosthesis') }}</span></li>
+                        <li class="offer__card-list-element"><span
+                                class="offer__card-element">{{ __('offer.tooth_reconstruction_with_a_crown-root_insert') }}</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <a href="#" class="offer__btn">ZOBACZ PEŁNĄ OFERTĘ</a>
+        <a href="#" class="offer__btn">{{ __('main.see_full_offer') }}</a>
     </div>
 </section>
 <section class="about-us">
     <div class="wrapper about-us__container">
-        <img src="{{ asset('storage/art/doctor_640.jpg') }}" alt="Dentysta podczas pracy" class="about-us__img">
+        <img src="{{ asset('storage/art/doctor_1920.jpg') }}" alt="Dentysta podczas pracy" class="about-us__img">
         <div class="about-us__text-container">
-            <h2 class="about-us__title">Dlaczego my?</h2>
+            <h2 class="about-us__title">{{ __('main.why_us') }}</h2>
             <ul class="about-us__list">
-                <li class="about-us__list-element"><span class="about-us__list-element--text jd">Specjalizujemy się
-                        w ortodoncji już od 25 lat</span></li>
-                <li class="about-us__list-element"><span class="about-us__list-element--text">Jesteśmy młodym i
-                        nowoczesnym zespołem korzystającym z najnowszych metod leczenia</span></li>
-                <li class="about-us__list-element"><span class="about-us__list-element--text">Masz dostęp do wielu
-                        specjalistów w jednym miejscu</span></li>
-                <li class="about-us__list-element"><span class="about-us__list-element--text">Posiadamy najnowszy
-                        sprzęt zapewniający precyzyjną diagnostyke i gwarancję najwyższej jakości</span></li>
+                <li class="about-us__list-element"><span
+                        class="about-us__list-element--text jd">{{ __('main.sentence_1') }}</span></li>
+                <li class="about-us__list-element"><span
+                        class="about-us__list-element--text">{{ __('main.sentence_2') }}</span></li>
+                <li class="about-us__list-element"><span
+                        class="about-us__list-element--text">{{ __('main.sentence_3') }}</span></li>
+                <li class="about-us__list-element"><span
+                        class="about-us__list-element--text">{{ __('main.sentence_4') }}</span></li>
             </ul>
         </div>
     </div>

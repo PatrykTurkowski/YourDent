@@ -1,11 +1,12 @@
 @extends('layouts.main')
 @section('links')
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @include('includes._links')
 @endsection
 @section('content')
     @include('includes._nav')
-    <main class="main history">
-        <section class="container">
+    <main class="main history mt-5 pt-5">
+        <section class="container mt-5 pt-5">
             @if ($message = Session::get('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>{{ $message }}</strong>

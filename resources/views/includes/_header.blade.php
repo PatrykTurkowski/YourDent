@@ -5,11 +5,11 @@
             </div>
             <div class="header__img-shadow"></div>
             <div class="header__text-box">
-                <h1 class="header__text-title"> <span class="header__text-title--company">YourDent</span> bliżej Ciebie
+                <h1 class="header__text-title"> <span class="header__text-title--company">YourDent</span>
+                    {{ __('main.closer_to_you') }}
                 </h1>
-                <p class="header__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab adipisci et, quasi
-                    vero eaque deleniti repellendus accusantium. Iste, ad impedit!</p>
-                <a href="#main" class="header__text-btn">Odkryj więcej</a>
+                <p class="header__text">{{ __('main.subtitle') }}</p>
+                <a href="#main" class="header__text-btn">{{ __('main.discover_more') }}</a>
             </div>
         </div>
     </div>

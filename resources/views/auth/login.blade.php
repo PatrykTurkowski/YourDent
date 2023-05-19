@@ -2,6 +2,7 @@
 
 @section('content')
 @section('links')
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @include('includes._links')
 @endsection
 @section('content')

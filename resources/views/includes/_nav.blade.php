@@ -15,17 +15,20 @@
                 <a href="{{ route('visits.index') }}" class="nav__item-mobile">{{ __('t.make_an_appointment') }}
                 </a>
                 <a href="" class="nav__item-mobile">{{ __('t.team') }}</a>
-                <a href="" class="nav__item-mobile">{{ __('t.faq') }}</a>
-                <a href="" class="nav__item-mobile">{{ __('t.contact') }}</a>
+                <a href="/faq" class="nav__item-mobile">{{ __('t.faq') }}</a>
+
             </ul>
         </div>
         <!-- NAWIGACJA DESKTOP -->
         <div class="nav__items-box">
-            <a href="" class="nav__item">{{ __('t.offer') }}</a>
+            <a href="/offer" class="nav__item">{{ __('t.offer') }}</a>
             <a href="{{ route('visits.index') }}" class="nav__item">{{ __('t.make_an_appointment') }}</a>
-            <a href="" class="nav__item">{{ __('t.team') }}</a>
-            <a href="" class="nav__item">{{ __('t.faq') }}</a>
-            <a href="" class="nav__item">{{ __('t.contact') }}</a>
+            <a href="/team" class="nav__item">{{ __('t.team') }}</a>
+            <a href="/faq" class="nav__item">{{ __('t.faq') }}</a>
+            <div class="nav__item text-center">
+                <p>{{ __('t.call_to_us') }}</p>
+                <p>+48 123 - 456 - 789</p>
+            </div>
         </div>
         <div class="nav__login-box">
 
@@ -35,9 +38,9 @@
                     <a href="{{ route('login') }}" class="nav__login">{{ __('t.login') }}</a>
                 @endif
             @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <li class=" dropdown">
+                    <a id="navbarDropdown" class=" nav__item text-decoration-none dropdown-toggle" href="#"
+                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
 
@@ -49,26 +52,22 @@
                                 {{ __('Admin Panel') }}
                             </a>
                         @endcan
-                        @can('update', App\Model\User::class)
+                        @can('view', App\Model\User::class)
                             <a class="dropdown-item" href="{{ route('dashboard') }}">
                                 {{ __('dashboard') }}
                             </a>
                         @endcan
-                        @can('update', App\Model\User::class)
+                        @can('view', App\Model\User::class)
                             <a class="dropdown-item" href="{{ route('reservations.index', ['user' => Auth::user()->id]) }}">
                                 {{ __('Reservation') }}
                             </a>
                         @endcan
-                        @can('update', App\Model\User::class)
+                        @can('view', App\Model\User::class)
                             <a class="dropdown-item" href="{{ route('histories.index', ['user' => Auth::user()->id]) }}">
                                 {{ __('History') }}
                             </a>
                         @endcan
-                        @can('update', App\Model\User::class)
-                            <a class="dropdown-item" href="{{ route('users.edit', ['user' => Auth::user()->id]) }}">
-                                {{ __('profile') }}
-                            </a>
-                        @endcan
+
 
 
 

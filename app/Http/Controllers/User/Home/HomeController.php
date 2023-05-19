@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\User\Home;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\Term;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('user/dashboard');
+        $user = User::find(auth()->id());
+        $terms = Term::where('user_id', '=', auth()->id())->get();
+
+        return view('user/dashboard', compact('user', 'terms'));
     }
 }

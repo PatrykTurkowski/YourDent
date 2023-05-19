@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Jobs\ActivitesNewTerms;
+use App\Jobs\ChangeIsDone;
 use App\Models\Term;
 use Illuminate\Support\Facades\Bus;
 
@@ -25,6 +26,15 @@ class TermObserver
      */
     public function created(Term $term)
     {
+        function timeToSeconds(string $time): int
+        {
+            $arr = explode(':', $time);
+
+            return $arr[0] * 3600 + $arr[1] * 60;
+        }
+        $time = strtotime($term->date_visit) + timeToSeconds($term->end_visit);
+
+        ChangeIsDone::dispatch($term)->delay($time - time());
         ActivitesNewTerms::dispatch($term)->delay(now()->addDay());
     }
 

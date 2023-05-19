@@ -11,9 +11,13 @@ use App\Http\Controllers\Admin\Panel\PanelController;
 use App\Http\Controllers\User\Visit\VisitController;
 use App\Http\Controllers\Admin\Term\TermsGeneratorController;
 use App\Http\Controllers\Mail\ContactController;
+use App\Http\Controllers\User\Faq\FaqController;
 use App\Http\Controllers\User\Locales\LocalesController;
+use App\Http\Controllers\User\Management\ChangePasswordController;
 use App\Http\Controllers\User\Management\HistoryController;
 use App\Http\Controllers\User\Management\ReservationController;
+use App\Http\Controllers\User\Offer\OfferController;
+use App\Http\Controllers\User\Team\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +34,7 @@ Route::get('/', function () {
     return view('main.index');
 })->name('welcome');
 Route::get('/test', function () {
-    return view('auth2.login');
+    return view('user.faq.index');
 });
 
 Route::post('/send', [ContactController::class, 'send'])->name('send.email');
@@ -40,6 +44,10 @@ Auth::routes([
 ]);
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+Route::get('/faq', FaqController::class);
+Route::get('/team', TeamController::class);
+Route::get('/offer', OfferController::class);
+Route::post('/changePassword', ChangePasswordController::class);
 
 
 // ------users-----------

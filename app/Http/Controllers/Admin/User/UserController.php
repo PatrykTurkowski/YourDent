@@ -67,7 +67,7 @@ class UserController extends Controller
     public function store(StoreUserRequest $request): RedirectResponse
     {
         $user = new User($request->validated());
-        $user->newsletter = $request->newsletter == 1 ? true : false;
+
         $user->password = Hash::make($user->password);
         $user->save();
         return redirect()->route('users.index')->with('success', 'Udało dodać się nowego użytkownika.');
@@ -107,7 +107,7 @@ class UserController extends Controller
     {
 
         $user->fill($request->validated());
-        $user->newsletter = $request->newsletter == 1 ? true : false;
+
         $user->save();
         if ($user->role <= 2) {
             return redirect()->route('users.index')->with('success', 'udalo sie update danych.');

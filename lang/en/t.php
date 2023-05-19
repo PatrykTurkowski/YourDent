@@ -38,6 +38,7 @@ return [
     'saturday' => 'Saturday',
     'sunday' => 'Sunday',
     'closed' => 'Closed',
+    'call_to_us' => 'Call us',
 
 
 
